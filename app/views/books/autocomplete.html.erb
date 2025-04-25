@@ -1,0 +1,5 @@
+<% @books.each do |book| %>
+  <li class="flex w-full items-center text-sm py-2 px-3 hover:bg-amber-100" role="option" data-autocomplete-value="<%= book.id %>" data-autocomplete-label="<%= book.title %>">
+    <%= book.title %>
+  </li>
+<% end %>

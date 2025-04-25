@@ -12,5 +12,10 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "books#index"
 
-  resources :books
+  resources :books do
+    # 以下を追加する
+    collection do
+      get :autocomplete
+    end
+  end
 end
