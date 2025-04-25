@@ -1,0 +1,20 @@
+<div class="container pt-3">
+  <div class="row">
+    <div class="col-lg-10 offset-lg-1 m-10">
+      <!-- 検索フォーム -->
+      <%= render 'search_form', q: @q, url: books_path %>
+    </div>
+  </div>
+  <!-- 掲示板一覧 -->
+  <div class="row">
+    <div class="col-12">
+      <div class="row">
+        <% if @books.present? %>
+          <%= render @books %>
+        <% else %>
+          <div class="mb-3">本がありません</div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
