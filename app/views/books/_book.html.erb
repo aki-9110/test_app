@@ -1,0 +1,24 @@
+<div class="col-sm-12 col-lg-4 mb-3">
+  <div id="book-id-<%= book.id %>">
+    <div class="card bg-amber-200">
+      <div class="card-body">
+        <div class="d-flex">
+          <h4 class="card-title">
+            <%= link_to book.title, '#' %>
+          </h4>
+          <h4 class="card-title">
+            <%= link_to book.author, '#' %>
+          </h4>
+          <div class='ms-auto'>
+            <%= link_to '#', id: 'button-edit-#{book.id}' do %>
+              <i class="bi bi-pencil-fill"></i>
+            <% end %>
+            <%= link_to '#', id: 'button-delete-#{book.id}', method: :delete, data: {confirm: ''} do %>
+              <i class="bi bi-trash-fill"></i>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
