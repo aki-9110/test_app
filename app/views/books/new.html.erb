@@ -1,0 +1,11 @@
+<div>
+  <%= form_with model: @book, local: true do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title, placeholder: "タイトル" %>
+
+    <%= f.label :author %>
+    <%= f.text_field :author, placeholder: "著者" %>
+
+    <%= f.submit "投稿する", class: "btn btn-primary" %>
+  <% end %>
+</div>
