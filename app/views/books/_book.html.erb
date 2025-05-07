@@ -1,6 +1,6 @@
 <div class="col-sm-12 col-lg-4 mb-3">
   <div id="book-id-<%= book.id %>">
-    <div class="card bg-amber-200">
+    <div class="card bg-amber-50">
       <div class="card-body">
         <div class="d-flex">
           <h4 class="card-title">
@@ -9,13 +9,14 @@
           <h4 class="card-title">
             著者: <%= link_to book.author, '#' %>
           </h4>
-          <div class='ms-auto'>
-            <%= link_to '#', id: 'button-edit-#{book.id}' do %>
-              <i class="bi bi-pencil-fill"></i>
-            <% end %>
-            <%= link_to '#', id: 'button-delete-#{book.id}', method: :delete, data: {confirm: ''} do %>
-              <i class="bi bi-trash-fill"></i>
-            <% end %>
+          <div class="flex">
+            <h4 class="card-title">評価: </h4>
+            <div class="flex space-x-1 items-center ml-2">
+              <% Book.ratings.length.times do |index| %>
+                <span class='inline-block h-5 w-5 mask mask-star-2 <%= index < Book.ratings[book.rating] ? "bg-orange-400" : "bg-stone-400" %>' aria-hidden="true">
+                </span>
+              <% end %>
+            </div>
           </div>
         </div>
       </div>
