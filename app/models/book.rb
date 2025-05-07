@@ -4,7 +4,7 @@ class Book < ApplicationRecord
   validates :rating, presence: true
 
   def self.ransackable_attributes(auth_object = nil)
-    ["author", "created_at", "id", "title", "updated_at"]
+    [ "author", "created_at", "id", "title", "updated_at" ]
   end
 
   # 星5評価のステータス
